@@ -56,6 +56,12 @@ add ```"customWebpackConfig": {
 
 The app is running in (https://ewertonbello.github.io/tasklist-angular-tailwind/).
 
+## Resources Font
+
+Background Patterns (http://www.heropatterns.com/).
+
+Illustrations (https://undraw.co/illustrations).
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
