@@ -11,6 +11,7 @@ export class HomeListComponent {
 
   public tasks: ITask[];
   public alert: boolean = false;
+  readonly min_len: number = 5;
 
   constructor() { 
     this.tasks = [
@@ -20,9 +21,8 @@ export class HomeListComponent {
   }
 
   addTask(taskInput: any): void {
-    const min: number = 5;
     let taskName: string = taskInput.value.trim();
-    if (taskName.length >= min) {
+    if (taskName.length >= this.min_len) {
       let task:ITask = { name: taskName, checked: false }
       this.tasks.push(task);
       this.alert = false;
