@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ITask } from './models/itask';
+import { ITask } from './shared/itask';
 
 @Component({
   selector: 'app-home-list',
@@ -19,15 +19,17 @@ export class HomeListComponent {
     ];
   }
 
-  addTask(taskName: string): void {
-    taskName = taskName.trim();
-    if (taskName.length > 1) {      
+  addTask(taskInput: any): void {
+    const min: number = 5;
+    let taskName: string = taskInput.value.trim();
+    if (taskName.length >= min) {
       let task:ITask = { name: taskName, checked: false }
       this.tasks.push(task);
       this.alert = false;
     }else {
       this.alert = true;
     }
+    taskInput.value = "";
   }
 
   deleteTask(taskID: number): void {

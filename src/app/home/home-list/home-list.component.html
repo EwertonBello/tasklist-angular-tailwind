@@ -1,4 +1,4 @@
-<app-task-toolbar title="Lista de Tarefas"></app-task-toolbar>
+<app-task-toolbar title="Lista de Tarefas" srcIcon="assets/logo.svg"></app-task-toolbar>
 
 <div class="w-full py-8 md:px-32">
     <div *ngIf="alert" class="flex items-center px-4 py-3 text-sm font-bold text-white bg-blue-500" role="alert">
@@ -7,8 +7,8 @@
     </div>
 
     <div class="flex items-center w-full py-2 border-b border-teal-500">
-        <input (keyup.enter)="addTask(taskInput.value)" #taskInput class="input-add" type="text" placeholder="Qual seu novo objetivo?" aria-label="Objetivo">
-        <button (click)="addTask(taskInput.value)" class="btn btn-blue" type="button">
+        <input (keyup.enter)="addTask(taskInput)" #taskInput class="input-add" type="text" placeholder="Escreva seu novo objetivo aqui" aria-label="Objetivo">
+        <button (click)="addTask(taskInput)" class="btn btn-blue" type="button">
         Adicionar
         </button>
     </div>

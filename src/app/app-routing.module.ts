@@ -6,8 +6,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent },
-  { path: 'home', component: HomeListComponent },
+  // { path: '', component: WelcomeComponent },
+  { path: '', component: HomeListComponent },//'home'
   { path: '**', redirectTo: '' }
 ];
 

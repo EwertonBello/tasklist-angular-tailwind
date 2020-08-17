@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TaskToolbarComponent {
   @Input() title: string;
+  @Input() srcIcon: string = "assets/logo.svg";
 
 }

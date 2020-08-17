@@ -2,6 +2,60 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
 
+## TailWindCSS Install
+
+Run `npm i tailwindcss postcss-import postcss-loader postcss-scss @angular-builders/custom-webpack -D` to install and Run `npx tailwind init` to init.
+
+## TailWindCSS Config
+
+Import Tailwind on style.scss:
+```
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+```
+
+Create file `webpack.config.js` and insert code:
+	```
+	module.exports = {
+	    module: {
+		      rules: [
+		        {
+		          test: /\.scss$/,
+		          loader: 'postcss-loader',
+		          options: {
+		            ident: 'postcss',
+		            syntax: 'postcss-scss',
+		            plugins: () => [
+		              require('postcss-import'),
+		              require('tailwindcss'),
+		              require('autoprefixer'),
+		            ]
+		         }
+		       }
+		    ]
+		}
+	};
+	``` 
+
+In angular.json, replace: 
+`@angular-devkit/build-angular:browser` to `@angular-builders/custom-webpack:browser`
+add ```"customWebpackConfig": {
+              "path": "./webpack.config.js"
+            }``` in `options`.
+
+And replace: 
+
+`@angular-devkit/build-angular:dev-server` to `@angular-builders/custom-webpack:dev-server`
+add ```"customWebpackConfig": {
+              "path": "./webpack.config.js"
+            }``` in `options`
+
+## Demo
+
+The app is running in (https://ewertonbello.github.io/tasklist-angular-tailwind/).
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
