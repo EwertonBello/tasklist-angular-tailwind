@@ -17,7 +17,7 @@ Import Tailwind on style.scss:
 ```
 
 Create file `webpack.config.js` and insert code:
-	```
+```
 	module.exports = {
 	    module: {
 		      rules: [
@@ -37,7 +37,7 @@ Create file `webpack.config.js` and insert code:
 		    ]
 		}
 	};
-	``` 
+``` 
 
 In angular.json, replace: 
 `@angular-devkit/build-angular:browser` to `@angular-builders/custom-webpack:browser`
